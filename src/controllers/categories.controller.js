@@ -20,7 +20,6 @@ export async function create(req, res) {
 }
 
 export async function findAll(req, res) {
-  //aceitar query search
   try {
     const { rows } = await connection.query("SELECT * FROM categories");
     res.send(rows);

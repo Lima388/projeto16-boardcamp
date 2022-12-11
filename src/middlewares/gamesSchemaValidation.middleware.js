@@ -1,8 +1,8 @@
-import { categoriesSchema } from "../models/categories.model.js";
+import { gamesSchema } from "../models/games.model.js";
 
-export async function categoriesSchemaValidation(req, res, next) {
+export async function gamesSchemaValidation(req, res, next) {
   try {
-    const { error } = categoriesSchema.validate(req.body, {
+    const { error } = gamesSchema.validate(req.body, {
       abortEarly: false,
     });
     if (error) {
