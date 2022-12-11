@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import categoriesRoutes from './routes/categories.routes';
-import customersRoutes from './routes/customers.routes';
-import gamesRoutes from '.routes/games.routes';
-import rentalsRoutes from './routes/rentals.routes';
+import categoriesRoutes from "./routes/categories.routes.js";
+import customersRoutes from "./routes/customers.routes.js";
+import gamesRoutes from "./routes/games.routes.js";
+import rentalsRoutes from "./routes/rentals.routes.js";
 
 dotenv.config();
 

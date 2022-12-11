@@ -3,7 +3,7 @@ import {
   create,
   find,
   update,
-  erase
+  erase,
 } from "../controllers/rentals.controller.js";
 
 const router = Router();
