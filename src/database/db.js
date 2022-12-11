@@ -4,7 +4,6 @@ dotenv.config();
 
 const { Pool } = pkg;
 
-export const connectionDB = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+export const connection = new Pool({
+    connectionString: process.env.DATABASE_URL,
 });
