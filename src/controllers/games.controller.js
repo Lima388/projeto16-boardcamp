@@ -49,8 +49,8 @@ export async function findAll(req, res) {
       WHERE 
         LOWER(games.name) LIKE '${name}%';`
     );
-    res.send(rows);
+    return res.send(rows);
   } catch (err) {
-    res.status(500).send(err.message);
+    return res.status(500).send(err.message);
   }
 }

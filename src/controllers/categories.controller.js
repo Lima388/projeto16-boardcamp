@@ -22,8 +22,8 @@ export async function create(req, res) {
 export async function findAll(req, res) {
   try {
     const { rows } = await connection.query("SELECT * FROM categories");
-    res.send(rows);
+    return res.send(rows);
   } catch (err) {
-    res.status(500).send(err.message);
+    return res.status(500).send(err.message);
   }
 }
