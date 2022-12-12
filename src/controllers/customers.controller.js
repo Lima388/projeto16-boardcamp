@@ -36,10 +36,10 @@ export async function update(req, res) {
   const customer = req.body;
   try {
     const { rows } = await connection.query(
-      "SELECT COUNT(1) FROM customers WHERE (cpf)=$1 AND NOT id=$2;",
+      "SELECT * FROM customers WHERE (cpf)=$1 AND NOT id=$2;",
       [customer.cpf, id]
     );
-    if (rows[0].count > "0") {
+    if (rows.length > "0") {
       return res.sendStatus(409);
     }
     await connection.query(
@@ -62,7 +62,7 @@ export async function findOne(req, res) {
     if (rows.length === 0) {
       return res.sendStatus(404);
     }
-    return res.send(rows);
+    return res.send(rows[0]);
   } catch (err) {
     return res.status(500).send(err.message);
   }
